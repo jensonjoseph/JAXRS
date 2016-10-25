@@ -33,11 +33,16 @@ public class MessageService {
 	public Message addMessage(Message message) {
 		message.setId(messages.size() + 1);
 		messages.put(message.getId(), message);
-		return messages.get(message);
+		return messages.get(message.getId());
 	}
 
 	public Message updateMessage(Message message) {
 		messages.put(message.getId(), message);
 		return messages.get(message.getId());
+	}
+
+	public Message removeMessage(long id) {
+
+		return messages.remove(id);
 	}
 }
